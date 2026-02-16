@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa Cartinha Especial 💙</title>
+
+<style>
+:root{
+  --azul-escuro:#0d47a1;
+  --azul-medio:#1976d2;
+  --azul-claro:#e3f2fd;
+  --texto:#333;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0d47a1,#1976d2);
+  font-family:'Segoe UI',Tahoma,sans-serif;
+}
+
+#tela-entrada{
+  text-align:center;
+  color:white;
+  animation:fade 1s ease;
+}
+
+.gift-icon{font-size:70px;}
+
+.btn-abrir{
+  margin-top:20px;
+  padding:15px 45px;
+  border:none;
+  border-radius:30px;
+  font-size:1.1rem;
+  cursor:pointer;
+  background:white;
+  color:#0d47a1;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  transition:.3s;
+}
+
+.btn-abrir:hover{transform:scale(1.08);}
+
+.container{
+  display:none;
+  background:white;
+  width:92%;
+  max-width:420px;
+  border-radius:25px;
+  overflow-y:auto;
+  max-height:92vh;
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+  animation:subir .8s ease;
+}
+
+@keyframes subir{
+  from{transform:translateY(40px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+.header{
+  text-align:center;
+  padding:25px 20px;
+  background:linear-gradient(135deg,#0d47a1,#1976d2);
+  color:white;
+}
+
+.content{
+  padding:25px;
+  color:var(--texto);
+  line-height:1.6;
+}
+
+.highlight{
+  text-align:center;
+  font-weight:bold;
+  color:#1976d2;
+  margin-top:20px;
+  font-size:1.15rem;
+}
+
+.counter-box{
+  background:#e3f2fd;
+  margin:20px;
+  padding:18px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.counter-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+.counter-item b{
+  display:block;
+  font-size:1.4rem;
+  color:#0d47a1;
+}
+
+.counter-item span{
+  font-size:.7rem;
+  color:#555;
+}
+
+.history-section{padding:0 20px}
+
+.carousel{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  scroll-snap-type:x mandatory;
+}
+
+.slide{
+  min-width:100%;
+  scroll-snap-align:start;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.slide img,
+.slide video{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.slide-info{text-align:center;padding:10px}
+.slide-info h4{margin:5px 0;color:#0d47a1}
+
+audio{display:none}
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div id="tela-entrada">
+  <div class="gift-icon">🎁</div>
+  <h2>Você recebeu uma<br>cartinha especial</h2>
+  <p>Alguém tem algo muito importante pra te dizer...</p>
+  <button class="btn-abrir" onclick="abrirCarta()">Abrir presente</button>
+</div>
+
+<div class="container" id="carta">
+  <div class="header">
+    <div class="gift-icon">💙</div>
+    <h1>Para minha princesa</h1>
+  </div>
+
+  <div class="content">
+    <p><strong>Alanny Laryssa</strong>, a mulher que eu amo tanto e desejo ter para a vida toda. Seu olhar encantador e sua beleza me fazem me apaixonar todos os dias.</p>
+
+    <p>Você me motiva da melhor forma possível. Seu jeitinho esforçada, cuidadosa e esse amor tão lindo que você tem me fazem te amar cada vez mais.</p>
+
+    <p class="highlight">Te quero pra sempre. Você é meu mundo todo. 💙</p>
+  </div>
+
+  <div class="counter-box">
+    <h3>Nosso tempo juntos</h3>
+    <div class="counter-grid">
+      <div class="counter-item"><b id="anos">0</b><span>anos</span></div>
+      <div class="counter-item"><b id="meses">0</b><span>meses</span></div>
+      <div class="counter-item"><b id="dias">0</b><span>dias</span></div>
+      <div class="counter-item"><b id="horas">0</b><span>horas</span></div>
+      <div class="counter-item"><b id="minutos">0</b><span>min</span></div>
+    </div>
+    <p style="font-size:.7rem;color:#777;margin-top:10px">
+      Desde 29/11/2025
+    </p>
+  </div>
+
+  <div class="history-section">
+    <h3 style="text-align:center;color:#0d47a1">Nossa História</h3>
+    <div class="carousel">
+
+<div class="slide">
+  <video src="https://i.imgur.com/CRy66Jc.mp4" autoplay muted loop playsinline></video>
+  <div class="slide-info">
+    <h4>Primeiro encontro</h4>
+    <p>Nosso começo mais lindo.</p>
+  </div>
+</div>
+
+      <div class="slide">
+        <img src="https://cdn.discordapp.com/attachments/1447061670248841396/1464421505810305109/IMG-20251218-WA0011.jpg?ex=6994638e&is=6993120e&hm=52c9ec7e51fdf067f142c6ff0782dd0de7ed8fc257c3a0513078cdd365c098c3&">
+        <div class="slide-info">
+          <h4>Seu aniversário</h4>
+          <p>O dia mais especial até hoje pra mim.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <video src="momentos.mp4" autoplay muted loop playsinline></video>
+        <div class="slide-info">
+          <h4>Momentos juntos</h4>
+          <p>Cada lembrança mora no meu coração.</p>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center;font-size:.7rem;color:#aaa">(arraste para o lado)</p>
+  </div>
+</div>
+
+<audio id="musica" src="musica.mp3"></audio>
+
+<script>
+function abrirCarta(){
+  document.getElementById('tela-entrada').style.display='none';
+  document.getElementById('carta').style.display='block';
+  const audio=document.getElementById('musica');
+  audio.volume=0.5;
+  audio.play().catch(()=>{});
+  atualizarContador();
+}
+
+function atualizarContador(){
+  const inicio=new Date(2025,10,29,19,30);
+  const agora=new Date();
+  let diff=Math.floor((agora-inicio)/60000);
+
+  const anos=Math.floor(diff/525600); diff%=525600;
+  const meses=Math.floor(diff/43200); diff%=43200;
+  const dias=Math.floor(diff/1440); diff%=1440;
+  const horas=Math.floor(diff/60);
+  const minutos=diff%60;
+
+  anosEl.innerText=anos;
+  mesesEl.innerText=meses;
+  diasEl.innerText=dias;
+  horasEl.innerText=horas;
+  minutosEl.innerText=minutos;
+}
+
+const anosEl=document.getElementById('anos');
+const mesesEl=document.getElementById('meses');
+const diasEl=document.getElementById('dias');
+const horasEl=document.getElementById('horas');
+const minutosEl=document.getElementById('minutos');
+
+setInterval(atualizarContador,60000);
+</script>
+
+</body>
+</html>
